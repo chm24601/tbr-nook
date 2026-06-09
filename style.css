@@ -38,6 +38,34 @@ body {
 .flora-tr { position: absolute; top: 0; right: 0; width: 130px; height: 100%; }
 header, nav, main, .modal-overlay { position: relative; z-index: 1; }
 
+/* ── SNAIL TRAIL OVERLAY ── */
+.snail-trail-overlay {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+}
+.snail-trail-svg {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* ── HEADER SNAIL MASCOT ── */
+.header-title-row {
+  display: flex; align-items: center; justify-content: center; gap: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+.header-snail {
+  flex-shrink: 0;
+  animation: snailBob 3.5s ease-in-out infinite;
+}
+.header-snail-svg {
+  width: 72px; height: 56px;
+  filter: drop-shadow(0 0 8px rgba(192,132,252,0.5));
+}
+@keyframes snailBob {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+/* Override h1 margin when inside title row */
+.header-title-row h1 { margin-bottom: 0; }
+
 /* ── HEADER ── */
 header {
   text-align: center;
